@@ -12,19 +12,21 @@ public class Card implements Serializable
 
     String face;       //Heart, Diamond, Spade, Club
     int value;      //Ace to King - 1 to 13
-    boolean isBlack;
+    boolean isRed;
+    String imageName;
 
-    public Card(String face, int value)
+    public Card(String face, int value, String imageName)
     {
         this.face = face;
         this.value = value;
+        this.imageName = imageName;
 
         if (face.equals(HEART) || face.equals(DIAMOND))
         {
-            isBlack = false;
+            isRed = true;
         } else if (face.equals(SPADE) || face.equals(CLUB))
         {
-            isBlack = true;
+            isRed = false;
         }
     }
 

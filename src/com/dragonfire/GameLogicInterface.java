@@ -45,5 +45,9 @@ public interface GameLogicInterface extends Remote
     public Card drawCardFromDeck(int Player) throws RemoteException;
     
     public void shuffleDeck() throws RemoteException;
-            
+    
+    public void disconnect(int Player) throws RemoteException;
+    
+    public void reset() throws RemoteException;
+    
 }
