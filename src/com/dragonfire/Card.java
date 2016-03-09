@@ -1,15 +1,15 @@
 package com.dragonfire;
 
-public class Card
+import java.io.Serializable;
+
+public class Card implements Serializable
 {
 
-    static final String HEART = "Heart";
-    static final String DIAMOND = "Diamond";
-    static final String SPADE = "Spade";
-    static final String CLUB = "Club";
+    static final String HEART = "Hearts";
+    static final String DIAMOND = "Diamonds";
+    static final String SPADE = "Spades";
+    static final String CLUB = "Clubs";
 
-    static int nextID = 0;
-    int id;
     String face;       //Heart, Diamond, Spade, Club
     int value;      //Ace to King - 1 to 13
     boolean isBlack;
@@ -18,8 +18,6 @@ public class Card
     {
         this.face = face;
         this.value = value;
-        id = nextID;
-        nextID++;
 
         if (face.equals(HEART) || face.equals(DIAMOND))
         {
@@ -37,15 +35,15 @@ public class Card
         switch (value)
         {
             case 1:
-                return face + " " + "Ace";         
+                return "Ace of " + face;         
             case 11:
-                return face + " " + "Knight";
+                return "Jack of " + face;
             case 12:
-                return face + " " + "Queen";
+                return "Queen of " + face ;
             case 13:
-                return face + " " + "King";
+                return "King of " + face;
             default:
-                return face + " " + value;
+                return value + " of " + face;
         }
     }
 
